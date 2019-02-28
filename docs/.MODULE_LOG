@@ -1,0 +1,20 @@
+>>
+Script is used     : e3TemplateGenerator.bash
+Script Path        : /home/icssev/e3-dev/release/e3-tools/e3TemplateGenerator
+User               : icssev
+Log Time           : 2019Feb28-1138-58CET
+e3 repo Hash       : b62fb56
+
+>>
+>> Your sources are located in https://bitbucket.org/europeanspallationsource.
+>> git submodule will be used.
+>> 
+EPICS_MODULE_NAME  : nblmapp
+E3_MODULE_SRC_PATH : nblmapp
+EPICS_MODULE_URL   : https://bitbucket.org/europeanspallationsource
+E3_TARGET_URL      : https://github.com/icshwi
+>> 
+e3 module name     : e3-nblmapp
+e3 module url full : https://bitbucket.org/europeanspallationsource/nblmapp
+e3 target url full : https://github.com/icshwi/e3-nblmapp.git
+>> 
