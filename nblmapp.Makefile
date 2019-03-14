@@ -61,8 +61,10 @@ USR_CXXFLAGS += -std=c++0x -DIS_EEE_MODULE -DIS_EEE_MODULE_NO_TRACE -fpermissive
 
 TEMPLATES += $(wildcard $(APPDB)/*.db)
 
-SOURCES   += $(wildcard $(APPSRC)/*.c)
+
 SOURCES   += $(wildcard $(APPSRC)/*.cpp)
+SOURCES   += $(wildcard $(APPSRC)/*.c)
+
 
 DBDS      += $(APPSRC)/nblmapp_asub.dbd
 DBDS      += $(APPSRC)/IFC14AIChannelGroup.dbd
@@ -70,14 +72,6 @@ DBDS      += $(APPSRC)/IFC14AIChannelGroup.dbd
 
 SCRIPTS   += $(wildcard ../iocsh/*.iocsh)
 
-
-## This RULE should be used in case of inflating DB files 
-## db rule is the default in RULES_DB, so add the empty one
-## Please look at e3-mrfioc2 for example.
-
-#db: 
-#
-#.PHONY: db 
 
 
 USR_DBFLAGS += -I . -I ..
@@ -89,7 +83,7 @@ SUBS=$(wildcard $(APPDB)/*.substitutions)
 TMPS= 
 
 db: $(SUBS) $(TMPS)
-#db: $(SUBS)
+
 
 $(SUBS):
 	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
@@ -105,19 +99,11 @@ $(TMPS):
 
 
 .PHONY: db $(SUBS) $(TMPS)
-#.PHONY: db $(SUBS)
+
 
 vlibs:
 
 .PHONY: vlibs
-
-# vlibs: $(VENDOR_LIBS)
-
-# $(VENDOR_LIBS):
-# 	$(QUIET)$(SUDO) install -m 555 -d $(E3_MODULES_VENDOR_LIBS_LOCATION)/
-# 	$(QUIET)$(SUDO) install -m 555 $@ $(E3_MODULES_VENDOR_LIBS_LOCATION)/
-
-# .PHONY: $(VENDOR_LIBS) vlibs
 
 
 
