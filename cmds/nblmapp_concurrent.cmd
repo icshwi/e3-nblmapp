@@ -3,8 +3,10 @@
 # iocsh /opt/epics/modules/nblmapp/1.0.0/startup/nblmapp.cmd  #
 ###############################################################
 
-require nds3epics,1.0.0
+#require asyn,4.33.0
 require nblmapp,develop
+require nds3epics,1.0.0
+
 
 # Constant definitions
 epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")   # default prefix is "IFC1410_nBLM"
@@ -13,6 +15,8 @@ epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES, 400000000)
 
 # Set maximum number of samples: SCOPE_RAW_DATA_SAMPLES_MAX for the scope in the code
 epicsEnvSet(NELM, 5000)
+
+var onAMCOne 1
 
 # ################## acquisition  ##############################
 ndsCreateDevice(ifc14, ${PREFIX}, card=0, fmc=1, chGrp=${DEVICE})
