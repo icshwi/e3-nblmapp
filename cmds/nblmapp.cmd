@@ -4,7 +4,7 @@
 ###############################################################
 
 require nds3epics,1.0.0
-require nblmapp,develop
+require nblmapp,1.0.2
 
 # Constant definitions
 epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")   # default prefix is "IFC1410_nBLM"

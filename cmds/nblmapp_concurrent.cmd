@@ -4,7 +4,7 @@
 ###############################################################
 
 #require asyn,4.33.0
-require nblmapp,develop
+require nblmapp,1.0.2
 require nds3epics,1.0.0
 
 
