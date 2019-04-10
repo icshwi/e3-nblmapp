@@ -47,6 +47,13 @@ ifneq ($(strip $(TSCLIB_DEP_VERSION)),)
 tsclib_VERSION=$(TSCLIB_DEP_VERSION)
 endif
 
+
+ifneq ($(strip $(ADSUPPORT_DEP_VERSION)),)
+ADSupport_VERSION=$(ADSUPPORT_DEP_VERSION)
+endif
+
+
+
 APP:=src
 APPSRC:=$(APP)
 APPDB:=db
