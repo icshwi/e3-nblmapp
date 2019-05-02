@@ -1,16 +1,16 @@
-###############################################################
-# IOC running command on the IFC1410 board                    #
-# iocsh /opt/epics/modules/nblmapp/1.0.0/startup/nblmapp.cmd  #
-###############################################################
+################################################
+# IOC running command on the Concurrent board  #
+# cms/nblmapp_concurrent.cmd                   #
+################################################
 
 #require asyn,4.33.0
-require nblmapp,1.0.2
+#require ADSupport,1.4.0 ## for HDF5 library ##
+require nblmapp,develop
 require nds3epics,1.0.0
 
-
 # Constant definitions
-epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")   # default prefix is "IFC1410_nBLM"
-epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")  	    # default device is "PROTO"
+epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")
+epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")
 epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES, 400000000)
 
 # Set maximum number of samples: SCOPE_RAW_DATA_SAMPLES_MAX for the scope in the code

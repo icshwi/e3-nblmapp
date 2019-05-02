@@ -61,9 +61,15 @@ APPDB:=db
 
 USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 USR_INCLUDES += -I$(where_am_I)$(APPSRC)/include
+USR_INCLUDES += -I/usr/include
 
 USR_CFLAGS   += -DIS_EEE_MODULE
+# set -DIS_EEE_MODULE_NO_TRACE for no trace
 USR_CXXFLAGS += -std=c++0x -DIS_EEE_MODULE -DIS_EEE_MODULE_NO_TRACE -fpermissive
+
+# Set HDF5 libraries for CT, remove this when PPC
+USR_LDFLAGS  += -lhdf5
+USR_LDFLAGS  += -lhdf5_cpp
 
 
 TEMPLATES += $(wildcard $(APPDB)/*.db)
