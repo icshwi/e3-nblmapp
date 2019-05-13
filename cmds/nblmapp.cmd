@@ -1,10 +1,10 @@
 ################################################
 # IOC running command on the IFC1410 board     #
-# cms/nblmapp.cmd                              #
+# cmds/nblmapp.cmd                             #
 ################################################
 
 require nds3epics,1.0.0
-require nblmapp,develop
+require nblmapp,1.0.3
 
 # Constant definitions
 epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")

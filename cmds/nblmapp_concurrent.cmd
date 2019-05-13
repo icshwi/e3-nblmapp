@@ -1,11 +1,11 @@
 ################################################
 # IOC running command on the Concurrent board  #
-# cms/nblmapp_concurrent.cmd                   #
+# cmds/nblmapp_concurrent.cmd                  #
 ################################################
 
 #require asyn,4.33.0
 #require ADSupport,1.4.0 ## for HDF5 library ##
-require nblmapp,develop
+require nblmapp,1.0.3
 require nds3epics,1.0.0
 
 # Constant definitions
