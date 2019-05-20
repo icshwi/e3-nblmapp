@@ -3,8 +3,10 @@
 # cmds/nblmapp.cmd                             #
 ################################################
 
+require ADSupport,1.4.0 ## for HDF5 library ##
 require nds3epics,1.0.0
-require nblmapp,1.0.3
+require nblmapp,1.0.4
+#require nblmapp,develop
 
 # Constant definitions
 epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")

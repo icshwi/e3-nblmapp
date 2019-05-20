@@ -3,9 +3,9 @@
 # cmds/nblmapp_concurrent.cmd                  #
 ################################################
 
-#require asyn,4.33.0
-#require ADSupport,1.4.0 ## for HDF5 library ##
-require nblmapp,1.0.3
+require ADSupport,1.4.0 ## for HDF5 library ##
+require nblmapp,1.0.4
+#require nblmapp,develop
 require nds3epics,1.0.0
 
 # Constant definitions
