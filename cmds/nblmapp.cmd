@@ -9,7 +9,7 @@ require nds3epics,1.0.0
 require nblmapp,develop
 
 # Constant definitions
-epicsEnvSet(PREFIX,             "$(PREFIX=MEBT)")
+epicsEnvSet(PREFIX,             "$(PREFIX=FEBx)")
 epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")
 epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES, 400000000)
 
