@@ -79,10 +79,6 @@ SOURCES   += $(wildcard $(APPSRC)/*.cpp)
 SOURCES   += $(wildcard $(APPSRC)/*.c)
 
 
-DBDS      += $(APPSRC)/nblmapp_asub.dbd
-DBDS      += $(APPSRC)/IFC14AIChannelGroup.dbd
-
-
 SCRIPTS   += $(wildcard ../iocsh/*.iocsh)
 
 
