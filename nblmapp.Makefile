@@ -53,10 +53,10 @@ ADSupport_VERSION=$(ADSUPPORT_DEP_VERSION)
 endif
 
 
-# Exclude linux-ppc64e6500
-#EXCLUDE_ARCHS = linux-ppc64e6500
-#EXCLUDE_ARCHS += linux-corei7-poky
 
+#EXCLUDE_ARCHS += linux-ppc64e6500
+#EXCLUDE_ARCHS += linux-corei7-poky
+#EXCLUDE_ARCHS +=linux-x86_64
 
 APP:=src
 APPSRC:=$(APP)
@@ -68,7 +68,17 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)/include
 
 USR_CFLAGS   += -DIS_EEE_MODULE
 # set -DIS_EEE_MODULE_NO_TRACE for no trace
-USR_CXXFLAGS += -std=c++0x -DIS_EEE_MODULE -DIS_EEE_MODULE_NO_TRACE -fpermissive
+
+# Unfornately, CentOs 7 devtoolset 8 cannot support gnu+14/17
+ifeq ($(T_A),linux-x86_64)
+USR_CXXFLAGS += -std=gnu++11
+else
+USR_CXXFLAGS += -std=gnu++17
+endif
+
+USR_CXXFLAGS += -DIS_EEE_MODULE
+USR_CXXFLAGS += -DIS_EEE_MODULE_NO_TRACE
+USR_CXXFLAGS += -fpermissive
 
 # Set local (in /lib64) HDF5 libraries for CT, remove this when PPC
 # If the above statement is true, please use this for CentOS

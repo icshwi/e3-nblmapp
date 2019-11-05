@@ -36,3 +36,8 @@ $ bash e3.bash base
 ```
 $ exit
 ```
+
+## GCC compiler options
+
+ Unfortunately, CentOS7 devtoolset-8 doesn't support -std=gnu++17. However ESS Yocto Linux does support it properly.
+ 
