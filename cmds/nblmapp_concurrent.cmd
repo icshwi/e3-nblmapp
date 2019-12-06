@@ -9,6 +9,8 @@ require nblmapp,develop
 require nds3epics,1.0.0
 
 # Constant definitions
+#epicsEnvSet(TRIG0_PV,           "$(TRIG0_PV=MTCA-EVR:EvtECnt-I)")
+epicsEnvSet(TIMESTAMP,          "$(TIMESTAMP=MTCA-EVR:Time-I.TIME)")
 epicsEnvSet(PREFIX,             "$(PREFIX=FEBx)")
 epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")
 epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES, 400000000)
@@ -19,15 +21,17 @@ epicsEnvSet(NELM, 5000)
 var onAMCOne 1
 
 # ################## acquisition  ##############################
-ndsCreateDevice(ifc14, ${PREFIX}, card=0, fmc=1, chGrp=${DEVICE})
+# IFC1410 in AMC Slot 4
+ndsCreateDevice(ifc14, ${PREFIX}, card=4, fmc=1, chGrp=${DEVICE})
 
-dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH0, NELM=${NELM}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH1, NELM=${NELM}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH2, NELM=${NELM}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH3, NELM=${NELM}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH4, NELM=${NELM}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH5, NELM=${NELM}")
+dbLoadRecords("trigTime.db", "TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH0, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH1, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH2, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH3, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH4, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH5, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
 
 iocInit
 
