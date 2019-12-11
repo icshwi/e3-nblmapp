@@ -23,6 +23,8 @@ var onAMCOne 1
 # ################## acquisition  ##############################
 # IFC1410 in AMC Slot 4
 ndsCreateDevice(ifc14, ${PREFIX}, card=4, fmc=1, chGrp=${DEVICE})
+# For test with previous tsclib 3.1.0 (slot nb was always 0)
+#ndsCreateDevice(ifc14, ${PREFIX}, card=0, fmc=1, chGrp=${DEVICE})
 
 dbLoadRecords("trigTime.db", "TIMESTAMP=${TIMESTAMP}")
 dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},TIMESTAMP=${TIMESTAMP}")
