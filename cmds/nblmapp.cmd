@@ -9,7 +9,7 @@ require nds3epics,1.0.0
 require nblmapp,develop
 
 # Constant definitions
-#epicsEnvSet(TRIG0_PV,           "$(TRIG0_PV=MTCA-EVR:EvtECnt-I)")
+epicsEnvSet(TRIG0_PV,           "$(TRIG0_PV=MTCA-EVR:EvtECnt-I.TIME)")
 epicsEnvSet(TIMESTAMP,          "$(TIMESTAMP=MTCA-EVR:Time-I.TIME)")
 epicsEnvSet(PREFIX,             "$(PREFIX=FEBx)")
 epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")

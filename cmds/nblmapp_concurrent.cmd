@@ -9,7 +9,7 @@ require nblmapp,develop
 require nds3epics,1.0.0
 
 # Constant definitions
-#epicsEnvSet(TRIG0_PV,           "$(TRIG0_PV=MTCA-EVR:EvtECnt-I)")
+epicsEnvSet(TRIG0_PV,           "$(TRIG0_PV=MTCA-EVR:EvtECnt-I.TIME)")
 epicsEnvSet(TIMESTAMP,          "$(TIMESTAMP=MTCA-EVR:Time-I.TIME)")
 epicsEnvSet(PREFIX,             "$(PREFIX=FEBx)")
 epicsEnvSet(DEVICE,             "$(DEVICE=PBI-nBLM)")
@@ -21,8 +21,8 @@ epicsEnvSet(NELM, 5000)
 var onAMCOne 1
 
 # ################## acquisition  ##############################
-# IFC1410 in AMC Slot 4
-ndsCreateDevice(ifc14, ${PREFIX}, card=4, fmc=1, chGrp=${DEVICE})
+# IFC1410 in AMC Slot 5
+ndsCreateDevice(ifc14, ${PREFIX}, card=5, fmc=1, chGrp=${DEVICE})
 # For test with previous tsclib 3.1.0 (slot nb was always 0)
 #ndsCreateDevice(ifc14, ${PREFIX}, card=0, fmc=1, chGrp=${DEVICE})
 
