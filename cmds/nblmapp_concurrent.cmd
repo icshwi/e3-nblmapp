@@ -26,7 +26,7 @@ ndsCreateDevice(ifc14, ${PREFIX}, card=5, fmc=1, chGrp=${DEVICE})
 # For test with previous tsclib 3.1.0 (slot nb was always 0)
 #ndsCreateDevice(ifc14, ${PREFIX}, card=0, fmc=1, chGrp=${DEVICE})
 
-dbLoadRecords("trigTime.db", "TIMESTAMP=${TIMESTAMP}")
+dbLoadRecords("trigTime.db", "TIMESTAMP=${TRIG0_PV}")
 dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},TIMESTAMP=${TIMESTAMP}")
 dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH0, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
 dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE},CH_ID=CH1, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
