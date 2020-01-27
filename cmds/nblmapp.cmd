@@ -3,8 +3,8 @@
 # cmds/nblmapp.cmd                             #
 ################################################
 
-#require ADSupport,1.4.0 ## for HDF5 library ##
-require nds3epics,1.0.0
+#require ADSupport,1.9.0 ## for HDF5 library ##
+require nds3epics,1.0.1
 #require nblmapp,1.0.5
 require nblmapp,develop
 

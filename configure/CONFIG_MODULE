@@ -11,13 +11,13 @@ E3_MODULE_VERSION:=develop
 #
 ASYN_DEP_VERSION:=4.33.0
 NDS3_DEP_VERSION=3.0.0
-NDS3EPICS_DEP_VERSION=1.0.0
+NDS3EPICS_DEP_VERSION=1.0.1
 
 # For test with previous tsclib 3.1.0
 #TSCLIB_DEP_VERSION=3.1.0
 TSCLIB_DEP_VERSION=4.0.2
 
-ADSUPPORT_DEP_VERSION:=1.4.0
+ADSUPPORT_DEP_VERSION:=1.9.0
 #
 # In most case, we don't need to touch the following variables.
 #
