@@ -67,9 +67,9 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 USR_INCLUDES += -I$(where_am_I)$(APPSRC)/include
 USR_INCLUDES += -I/usr/include
 
-USR_CFLAGS   += -DIS_EEE_MODULE
+#USR_CFLAGS   += -DIS_EEE_MODULE
 # set -DIS_EEE_MODULE_NO_TRACE for no trace
-USR_CXXFLAGS += -std=c++1y -DIS_EEE_MODULE -DIS_EEE_MODULE_NO_TRACE -fpermissive
+USR_CXXFLAGS += -std=c++1y -DIS_EEE_MODULE_NO_TRACE -fpermissive
 
 ## Unfornately, CentOs 7 devtoolset 8 cannot support gnu+14/17
 #ifeq ($(T_A),linux-x86_64)
@@ -78,7 +78,6 @@ USR_CXXFLAGS += -std=c++1y -DIS_EEE_MODULE -DIS_EEE_MODULE_NO_TRACE -fpermissive
 #USR_CXXFLAGS += -std=gnu++17
 #endif
 
-#USR_CXXFLAGS += -DIS_EEE_MODULE
 #USR_CXXFLAGS += -DIS_EEE_MODULE_NO_TRACE
 #USR_CXXFLAGS += -fpermissive
 

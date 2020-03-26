@@ -19,9 +19,9 @@ epicsEnvSet(AMC1,               "$(AMC1=130)")
 # The tens of AMC gives the card in slot 5
 epicsEnvSet(AMC2,               "$(AMC2=150)")
 ##################### Only one board ##############################
-#epicsEnvSet(AMCs,               "$(AMC1)")
+epicsEnvSet(AMCs,               "$(AMC1)")
 ################# or with several IFC1410 #########################
-epicsEnvSet(AMCs,               "$(AMC1)_$(AMC2)")
+#epicsEnvSet(AMCs,               "$(AMC1)_$(AMC2)")
 ###################################################################
 
 
@@ -48,13 +48,13 @@ dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC1},CH_ID=CH4,
 dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC1},CH_ID=CH5, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
 
 ################# Test with a 2nd IFC1410 #########################
-dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH0, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH1, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH2, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH3, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH4, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
-dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH5, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm_group.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH0, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH1, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH2, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH3, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH4, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
+#dbLoadRecords("nblm.db", "PREFIX=${PREFIX},CH_GRP_ID=${DEVICE}${AMC2},CH_ID=CH5, NELM=${NELM},TIMESTAMP=${TIMESTAMP}")
 ###################################################################
 
 iocInit
@@ -64,5 +64,5 @@ iocInit
 dbpf ${PREFIX}:${DEVICE}${AMC1}:STAT "ON"
 
 ################# Test with a 2nd IFC1410 #########################
-dbpf ${PREFIX}:${DEVICE}${AMC2}:STAT "ON"
+#dbpf ${PREFIX}:${DEVICE}${AMC2}:STAT "ON"
 ###################################################################
