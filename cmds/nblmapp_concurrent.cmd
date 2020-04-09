@@ -34,7 +34,8 @@ var onAMCOne 1
 
 # ################## acquisition  ##############################
 # IFC1410 in AMC Slot 3 and 5
-ndsCreateDevice(nblm, $(PREFIX), chGrp=${DEVICE}, grpNb=${AMCs})
+# MB_DOD is the total DOD size allocated for each IFC1410 (in MBytes)
+ndsCreateDevice(nblm, $(PREFIX), chGrp=${DEVICE}, grpNb=${AMCs}, MB_DOD="64")
 
 dbLoadRecords("trigTime.db", "TIMESTAMP=${TRIG0_PV}")
 

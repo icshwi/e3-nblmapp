@@ -22,7 +22,8 @@ epicsEnvSet(EPICS_CA_MAX_ARRAY_BYTES, 400000000)
 epicsEnvSet(NELM, 5000)
 
 # ################## acquisition  ##############################
-ndsCreateDevice(nblm, $(PREFIX), chGrp=${DEVICE}, grpNb=${AMC})
+# MB_DOD is the total allocated DOD size (in MBytes)
+ndsCreateDevice(nblm, $(PREFIX), chGrp=${DEVICE}, grpNb=${AMC}, MB_DOD="64")
 
 dbLoadRecords("trigTime.db", "TIMESTAMP=${TRIG0_PV}")
 
